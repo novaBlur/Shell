@@ -50,10 +50,8 @@
         }
 
         .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            border-radius: 50%;
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -219,166 +217,234 @@
             box-shadow: 0 15px 40px rgba(221, 29, 33, 0.6);
         }
 
-        /* Services Section */
-        .services {
-            padding: 8rem 2rem;
-            background: #000;
-            position: relative;
-        }
+       /* Services Section */
+.services {
+    padding: 8rem 2rem;
+    background: #000;
+    position: relative;
+}
 
-        .section-title {
-            text-align: center;
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 4rem;
-            background: linear-gradient(135deg, #FFD700, #FFF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+.section-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, #FFD700, #FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-        .services-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-        }
+.services-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
 
-        .service-card {
-            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-            border-radius: 30px;
-            padding: 3rem;
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
+.service-card {
+    background: #000;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 420px;
+}
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(221, 29, 33, 0.1));
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
+.service-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    border-color: #FFD700;
+    box-shadow: 0 25px 50px rgba(255, 215, 0, 0.3);
+}
 
-        .service-card:hover::before {
-            opacity: 1;
-        }
+.service-image {
+    width: 100%;
+    height: 55%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+}
 
-        .service-card:hover {
-            transform: translateY(-15px) rotateX(5deg);
-            border-color: #FFD700;
-            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.3);
-        }
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
 
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        }
+.service-card:hover .service-image img {
+    transform: scale(1.15);
+}
 
-        .service-card:hover .service-icon {
-            transform: rotateY(360deg) scale(1.1);
-        }
+.service-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    z-index: 1;
+}
 
-        .service-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #FFD700;
-        }
+.service-content {
+    padding: 2rem;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
-        .service-card p {
-            color: #ccc;
-            line-height: 1.6;
-            font-size: 1.1rem;
-        }
+.service-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    color: #FFD700;
+}
 
-        /* Promotions Section */
-        .promotions {
-            padding: 8rem 2rem;
-            background: linear-gradient(180deg, #000 0%, #1a0a0a 100%);
-        }
+.service-card p {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
 
-        .promo-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
-        .promo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+       /* Promotions Section */
+.promotions {
+    padding: 8rem 2rem;
+    background: linear-gradient(180deg, #000 0%, #1a0a0a 100%);
+}
 
-        .promo-card {
-            background: linear-gradient(135deg, #DD1D21, #FF4444);
-            border-radius: 30px;
-            padding: 3rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            cursor: pointer;
-        }
+.promo-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
-        .promo-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
+.section-title {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    background: linear-gradient(135deg, #FFD700, #FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-        .promo-card:hover::after {
-            opacity: 1;
-        }
+.promo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
 
-        .promo-card:hover {
-            transform: scale(1.05) rotateZ(2deg);
-            box-shadow: 0 30px 60px rgba(221, 29, 33, 0.5);
-        }
+.promo-card {
+    background: #000;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    border: 2px solid transparent;
+}
 
-        .promo-badge {
-            display: inline-block;
-            background: #FFD700;
-            color: #000;
-            padding: 0.5rem 1.5rem;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-        }
+.promo-card:hover {
+    transform: scale(1.05) translateY(-10px);
+    box-shadow: 0 30px 60px rgba(255, 215, 0, 0.4);
+    border-color: #FFD700;
+}
 
-        .promo-card h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
+.promo-image {
+    width: 100%;
+    height: 60%;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #DD1D21, #FF4444);
+}
 
-        .promo-card p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
+.promo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
 
+.promo-card:hover .promo-image img {
+    transform: scale(1.1);
+}
+
+.promo-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 1;
+}
+
+.promo-badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 2;
+    display: inline-block;
+    background: #FFD700;
+    color: #000;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.promo-content {
+    padding: 2rem;
+    background: linear-gradient(180deg, #1a1a1a 0%, #000 100%);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.promo-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    color: #FFD700;
+}
+
+.promo-card p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .promo-grid {
+        grid-template-columns: 1fr;
+    }
+}
         /* Footer */
         footer {
             background: #000;
@@ -582,73 +648,123 @@
         </div>
     </section>
 
-    <section id="services" class="services">
-        <h2 class="section-title">Premium Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">⛽</div>
-                <h3>Shell V-Power</h3>
-                <p>Experience ultimate performance with our premium fuel formulated with advanced cleaning technology to protect your engine.</p>
+ <section id="services" class="services">
+    <h2 class="section-title">Premium Services</h2>
+    <div class="services-grid">
+        <!-- Shell Fuels -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="https://www.shell.co.za/motorists/inside-our-stations/_jcr_content/root/main/section_1391448807_c/promo_copy_101841126.shellimg.jpeg/1698155463287/red-ferrari-on-a-shell-forecourt.jpeg?imwidth=392&impolicy=amidala-image&imdensity=1" alt="Shell Fuels">
             </div>
-            <div class="service-card">
-                <div class="service-icon">🚗</div>
-                <h3>Car Wash</h3>
-                <p>Keep your vehicle pristine with our state-of-the-art automated wash systems and hand finishing options.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🛒</div>
-                <h3>Shell Select Store</h3>
-                <p>Convenience at your fingertips with fresh food, beverages, and essentials available 24/7.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">💳</div>
-                <h3>ClubSmart Rewards</h3>
-                <p>Earn points on every purchase and unlock exclusive rewards, discounts, and special offers.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⚡</div>
-                <h3>EV Charging</h3>
-                <p>Fast and reliable electric vehicle charging stations for the future of mobility.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>Quick Service</h3>
-                <p>Expert technicians ready to help with tire pressure, fluid checks, and minor repairs.</p>
+            <div class="service-content">
+                <h3>Shell Fuels</h3>
+                <p>Premium fuels including Shell V-Power and FuelSave designed to clean and protect your engine while improving performance and efficiency.</p>
             </div>
         </div>
-    </section>
 
-    <section id="promotions" class="promotions">
-        <div class="promo-container">
-            <h2 class="section-title">Current Offers</h2>
-            <div class="promo-grid">
-                <div class="promo-card">
+        <!-- Shell Motorcycle Engine Oils -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="https://www.shell.co.za/motorists/oils-lubricants/_jcr_content/root/main/section_1962134789/promo_copy_1661968837.shellimg.jpeg/1698664072130/superior-engine-oil-for-bikes.jpeg?imwidth=392&impolicy=amidala-image&imdensity=1" alt="Shell ClubSmart">
+            </div>
+            <div class="service-content">
+                <h3>Shell Advanced Motorcycle Engine Oils</h3>
+                <p> Protect your engine and enjoy every ride with Shell Advanced motor oils with PurePlus Technology</p>
+            </div>
+        </div>
+
+        <!-- Shell Cards -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="https://www.shell.co.za/business-customers/_jcr_content/root/main/section_89524238/promo_2136597890.shellimg.jpeg/1723025368339/shell-contact-us-page-header.jpeg?imwidth=392&impolicy=amidala-image&imdensity=1" alt="Shell Cards">
+            </div>
+            <div class="service-content">
+                <h3>Shell Fleet & Cards</h3>
+                <p>Convenient payment solutions for businesses and individuals. Manage fuel expenses with Shell Fleet Cards and Commercial Fuel Cards.</p>
+            </div>
+        </div>
+
+        <!-- Shell Select Store -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="Shell-Select_teaser_500-x-400.jpg" alt="Shell Select Store">
+            </div>
+            <div class="service-content">
+                <h3>Shell Select</h3>
+                <p>Quality convenience store offering fresh food, hot beverages, snacks, and everyday essentials. Your one-stop shop on the go.</p>
+            </div>
+        </div>
+
+        <!-- LPG (Liquefied Petroleum Gas) -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="https://www.shell.com.au/motorists/shell-fuels/shell-autogas/_jcr_content/root/main/section/page-header.shellimg.jpeg/1697197833079/white-car-on-the-road.jpeg?imwidth=1118&impolicy=amidala-image&imdensity=1" alt="Shell LPG">
+            </div>
+            <div class="service-content">
+                <h3>Shell AutoGas (LPG)</h3>
+                <p>Clean, efficient, and cost-effective alternative fuel. Convert your vehicle to LPG and enjoy significant savings with reduced emissions.</p>
+            </div>
+        </div>
+
+        <!-- Lubricants -->
+        <div class="service-card">
+            <div class="service-image">
+                <img src="https://www.shell.co.za/motorists/oils-lubricants/_jcr_content/root/main/section_1962134789/promo_copy.shellimg.jpeg/1698664045179/shell-helix-ultra-being-poured-into-engine.jpeg?imwidth=392&impolicy=amidala-image&imdensity=1" alt="Shell Lubricants">
+            </div>
+            <div class="service-content">
+                <h3>Shell Lubricants</h3>
+                <p>High-quality engine oils and lubricants including Shell Helix motor oils. Protect your engine and enhance performance with trusted products.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <section id="promotions" class="promotions">
+    <div class="promo-container">
+        <h2 class="section-title">Current Offers</h2>
+        <div class="promo-grid">
+            <div class="promo-card">
+                <div class="promo-image">
                     <span class="promo-badge">LIMITED TIME</span>
+                    <img src="https://www.shell.co.za/_jcr_content/root/main/section/simple_copy/promo_1357427992.shellimg.jpeg/1728632193037/shell-v-rewards-topup.jpeg?imwidth=392&impolicy=amidala-image&imdensity=1" alt="Shell V-Power Fuel">
+                </div>
+                <div class="promo-content">
                     <h3>10% Off Shell V-Power</h3>
                     <p>Join ClubSmart today and get 10% off your first Shell V-Power fill-up. Premium fuel for ultimate performance.</p>
                 </div>
-                <div class="promo-card">
+            </div>
+            <div class="promo-card">
+                <div class="promo-image">
                     <span class="promo-badge">NEW</span>
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&h=600&fit=crop&q=80" alt="Coffee">
+                </div>
+                <div class="promo-content">
                     <h3>Free Coffee Monday</h3>
                     <p>Every Monday, get a free regular coffee with any fuel purchase. Start your week energized!</p>
                 </div>
-                <div class="promo-card">
+            </div>
+            <div class="promo-card">
+                <div class="promo-image">
                     <span class="promo-badge">LOYALTY</span>
-                    <h3>Triple Points Weekend</h3>
-                    <p>Earn 3x ClubSmart points on all purchases this weekend. More points, more rewards!</p>
+                    <img src="https://www.shell.co.za/_jcr_content/root/main/section/promo_copy_copy_copy_1675954215.shellimg.jpeg/1753347256249/shell-share-app-q-three-and-q-four.jpeg?imwidth=509&impolicy=amidala-image&imdensity=1" alt="Loyalty Rewards">
+                </div>
+                <div class="promo-content">
+                    <h3>Earn Rewards with Shell Lubricants</h3>
+                    <p>You've been earning, now, earn some more!</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <footer id="contact">
         <div class="footer-content">
             <div class="footer-links">
                 <a href="https://www.shell.co.za/" target="_blank">Official Website</a>
-                <a href="#">Find a Station</a>
-                <a href="#">Fuel Cards</a>
-                <a href="#">About Us</a>
-                <a href="#">Careers</a>
+                <a href="https://www.shell.co.za/motorists/shell-station-locator.html">Find a Station</a>
+                <a href="https://www.shell.co.za/business-customers/shell-fleet-solutions/shell-fuel-card-station-locator.html">Fuel Cards</a>
+                <a href="https://www.shell.co.za/about-us.html">About Us</a>
+                <a href="https://www.shell.co.za/careers.html">Careers</a>
             </div>
             <p class="copyright">&copy; 2025 Shell South Africa. All rights reserved.</p>
         </div>
@@ -680,22 +796,22 @@
             });
         }, observerOptions);
 
-        // Animate service cards
-        document.querySelectorAll('.service-card').forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(50px)';
-            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-            observer.observe(card);
-        });
+        // Animate service cards on scroll
+document.querySelectorAll('.service-card').forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(50px)';
+    card.style.transition = `all 0.6s ease ${index * 0.1}s`;
+    observer.observe(card);
+});
 
-        // Animate promo cards
-        document.querySelectorAll('.promo-card').forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(50px)';
-            card.style.transition = `all 0.6s ease ${index * 0.15}s`;
-            observer.observe(card);
-        });
-
+       
+// Animate promo cards
+document.querySelectorAll('.promo-card').forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(50px)';
+    card.style.transition = `all 0.6s ease ${index * 0.15}s`;
+    observer.observe(card);
+});
         // Smooth parallax on hero
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
